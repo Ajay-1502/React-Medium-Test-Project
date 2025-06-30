@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import DisplayProduct from './DisplayProduct';
 
-const ProductDetails = () => {
+const ProductInput = () => {
   const [products, setProducts] = useState(() => {
     const storedProducts = localStorage.getItem('products');
     return storedProducts ? JSON.parse(storedProducts) : [];
@@ -46,20 +47,9 @@ const ProductDetails = () => {
           <button type="submit">Add Product</button>
         </form>
       </div>
-      <div>
-        {products.map((product) => {
-          return (
-            <ul key={product.id}>
-              {product.name} - {product.description} -₹{product.price} -
-              <button>Buy Large {product.lSize}</button>
-              <button>Buy Medium {product.mSize}</button>
-              <button> Buy Small {product.sSize}</button>
-            </ul>
-          );
-        })}
-      </div>
+      <DisplayProduct products={products} />
     </>
   );
 };
 
-export default ProductDetails;
+export default ProductInput;

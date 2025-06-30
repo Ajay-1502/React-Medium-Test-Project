@@ -4,3 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+
+h3 {
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+}
