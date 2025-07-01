@@ -1,17 +1,21 @@
+import { useState } from 'react';
 import CartContext from './cart-context';
 
 const ContextProvider = (props) => {
-  const addProductHandler = () => {};
+  const [cartItems, setCartItems] = useState([]);
 
-  const removeProductHandler = () => {};
+  const addProductHandler = (product, size) => {
+    setCartItems((prevItems) => {
+      return [...prevItems, { ...product, size }];
+    });
+  };
 
   const cartContext = {
-    products: [],
-    addProduct: addProductHandler,
-    removeProduct: removeProductHandler,
+    cartItems: cartItems,
+    addToCart: addProductHandler,
   };
   return (
-    <CartContext.Provider initial={cartContext}>
+    <CartContext.Provider value={cartContext}>
       {props.children}
     </CartContext.Provider>
   );

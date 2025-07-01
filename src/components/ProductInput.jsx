@@ -47,7 +47,7 @@ const ProductInput = () => {
           <button type="submit">Add Product</button>
         </form>
       </div>
-      <DisplayProduct products={products} />
+      <DisplayProduct products={products} updateProducts={setProducts} />
     </>
   );
 };
