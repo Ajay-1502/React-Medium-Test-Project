@@ -28,19 +28,19 @@ const DisplayProduct = ({ products, updateProducts }) => {
             {product.name} - {product.description} -₹{product.price}
             <button
               disabled={product.lSize <= 0}
-              onClick={() => handleBuy(product.id, 'lSize')}
+              onClick={() => handleBuy(product.id, 'l')}
             >
               Buy Large {product.lSize}
             </button>
             <button
               disabled={product.mSize <= 0}
-              onClick={() => handleBuy(product.id, 'mSize')}
+              onClick={() => handleBuy(product.id, 'm')}
             >
               Buy Medium {product.mSize}
             </button>
             <button
               disabled={product.sSize <= 0}
-              onClick={() => handleBuy(product.id, 'sSize')}
+              onClick={() => handleBuy(product.id, 's')}
             >
               Buy Small {product.sSize}
             </button>

@@ -6,7 +6,18 @@ const ContextProvider = (props) => {
 
   const addProductHandler = (product, size) => {
     setCartItems((prevItems) => {
-      return [...prevItems, { ...product, size }];
+      const existingIndex = prevItems.findIndex((item) => {
+        return item.id == product.id && item.size == size;
+      });
+
+      if (existingIndex !== -1) {
+        const updateItem = [...prevItems];
+        updateItem[existingIndex] = {
+          ...updateItem[existingIndex],
+          quantity: updateItem[existingIndex].quantity + 1,
+        };
+        return updateItem;
+      } else return [...prevItems, { ...product, size, quantity: 1 }];
     });
   };
 
