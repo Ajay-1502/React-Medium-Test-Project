@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import CartContext from './cart-context';
+import CartContext from '../Context/cart-context';
+import './DisplayProduct.css';
 
 const DisplayProduct = ({ products, updateProducts }) => {
   const cartCtx = useContext(CartContext);
@@ -21,32 +22,37 @@ const DisplayProduct = ({ products, updateProducts }) => {
   };
 
   return (
-    <div>
-      {products.map((product) => {
-        return (
-          <ul key={product.id}>
-            {product.name} - {product.description} -₹{product.price}
+    <div className="product-list">
+      {products.map((product) => (
+        <div className="product-card" key={product.id}>
+          <h3>{product.name}</h3>
+          <p>{product.description}</p>
+          <p>₹{product.price}</p>
+          <div className="button-group">
             <button
+              className="buy-btn"
               disabled={product.lSize <= 0}
-              onClick={() => handleBuy(product.id, 'l')}
+              onClick={() => handleBuy(product.id, 'lSize')}
             >
-              Buy Large {product.lSize}
+              Buy Large ({product.lSize})
             </button>
             <button
+              className="buy-btn"
               disabled={product.mSize <= 0}
-              onClick={() => handleBuy(product.id, 'm')}
+              onClick={() => handleBuy(product.id, 'mSize')}
             >
-              Buy Medium {product.mSize}
+              Buy Medium ({product.mSize})
             </button>
             <button
+              className="buy-btn"
               disabled={product.sSize <= 0}
-              onClick={() => handleBuy(product.id, 's')}
+              onClick={() => handleBuy(product.id, 'sSize')}
             >
-              Buy Small {product.sSize}
+              Buy Small ({product.sSize})
             </button>
-          </ul>
-        );
-      })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

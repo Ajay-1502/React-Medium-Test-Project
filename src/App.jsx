@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import ProductInput from './components/ProductInput';
-import ContextProvider from './components/ContextProvider';
+import ProductInput from './components/Product-Input/ProductInput';
+import ContextProvider from './components/Context/ContextProvider';
 import Modal from './components/UI/Modal';
 import CartModal from './components/UI/CartModal';
 import './App.css';
@@ -19,7 +19,9 @@ function App() {
   return (
     <ContextProvider>
       <header>
-        <button onClick={openCartHandler}>Cart</button>
+        <button className="cart-btn" onClick={openCartHandler}>
+          Cart
+        </button>
       </header>
       {showCart && (
         <Modal onClose={closeCartHandler}>

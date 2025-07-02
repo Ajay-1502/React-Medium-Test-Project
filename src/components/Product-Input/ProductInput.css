@@ -1,0 +1,129 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: white;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+}
+
+header button {
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header button:hover {
+  background-color: crimson;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom:-23rem;
+  height: calc(100vh - 100px);
+  align-items: flex-start;
+}
+
+.product-form {
+  background-color: #2e2e2e;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.product-form h2{
+  margin-top:0.5rem;
+  margin-bottom:3rem;
+  text-align:center;
+  color:orange;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.form-row label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.form-row input {
+  padding: 0.3rem;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 170px;
+  padding:
+  background-color: white;
+  color: black;
+  font-weight:bold;
+}
+
+.quantity-labels {
+  font-weight: bold;
+  color:white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sizes {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1.5rem;
+}
+
+.sizes div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sizes input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 120px;
+  background-color: white;
+  color: black;
+  font-weight:bold;
+}
+
+.submit-row {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-row button {
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-row button:hover {
+  background-color: green;
+}
